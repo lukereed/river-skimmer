@@ -3,7 +3,7 @@ import pandas as pd
 from river_skimmer.rivers.permit import Permit
 from river_skimmer.campsites.ruby_horsethief import RubyHorsethief
 from river_skimmer.clients.recreation_service import get_camp_details
-from river_skimmer.utils import make_dir_if_not_exist
+from river_skimmer.utils.utils import make_dir_if_not_exist
 
 
 class RubyCampsites:
@@ -30,7 +30,7 @@ class RubyCampsites:
 
 if __name__ == "__main__":
     camp_availability = RubyCampsites(
-        month=5,
+        month=4,
         year=2025,
     )
     make_dir_if_not_exist('output')
