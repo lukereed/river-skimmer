@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "river-skimmer"
+version = "0.1.0"
+description = ""
+authors = ["Luke <river.skimmer.13@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+beautifulsoup4 = "^4.12.3"
+requests = "^2.31.0"
+urllib3 = "^2.2.1"
+python-dotenv = "^1.0.1"
+pandas = "^2.2.1"
+
+
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.0.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
