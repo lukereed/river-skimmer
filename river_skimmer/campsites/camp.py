@@ -1,3 +1,6 @@
+"""
+Dataclass for camps on a given river section
+"""
 from dataclasses import dataclass
 
 

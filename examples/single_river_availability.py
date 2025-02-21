@@ -1,3 +1,6 @@
+"""
+Example usage to extract availability of a single river segment
+"""
 from river_skimmer.clients.recreation_service import get_river_availability
 from river_skimmer.rivers.permit import Permit
 

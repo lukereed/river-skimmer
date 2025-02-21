@@ -1,20 +1,12 @@
+"""
+Details for Overnight River Permits
+"""
 from dataclasses import dataclass
+
+from river_skimmer.rivers.section import Section
 
 
 @dataclass
-class Section:
-    """
-    Describes a river section
-    """
-    id: int
-    entrance: int
-    name: str
-    river: str
-    put_in: str
-    take_out: str
-    # TODO: Add Lottery Start and End Dates
-
-
 class Permit:
     """
     Library of individual river sections
@@ -116,13 +108,15 @@ class Permit:
         take_out='FosterBar',
     )
 
-    def __init__(self) -> None:
-        pass
-
     @property
     def river_sections(self):
+        """
+        Compiles a list of River Sections
+
+        Returns:
+            list: List of River Sections
+        """
         return [
-            self.YampaDeerlodgePark,
             self.GreenRiverDesolationGray,
             self.GreenRiverGatesOfLodore,
             # self.RubyHorsethief,  # Follows a different format on rec.gov

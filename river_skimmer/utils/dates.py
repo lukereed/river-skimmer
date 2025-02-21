@@ -1,5 +1,6 @@
-
-import os
+"""
+Helper methods for dates
+"""
 from datetime import datetime
 
 
@@ -23,11 +24,3 @@ def dt_to_data_string(dt: datetime) -> str:
     Returns a formatted datetime string for post request
     """
     return dt.strftime('%a %b %d %Y')
-
-
-def make_dir_if_not_exist(path: str) -> None:
-    """
-    Checks if a directory exists and makes it if it does not
-    """
-    if not os.path.exists(path):
-        os.makedirs(path)

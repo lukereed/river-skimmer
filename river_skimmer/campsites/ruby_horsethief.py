@@ -1,6 +1,12 @@
+"""
+Details for all Ruby Horsethief Camps
+"""
+from dataclasses import dataclass
+
 from river_skimmer.campsites.camp import Camp
 
 
+@dataclass
 class RubyHorsethief:
     """
     Individual campsites for Ruby Horsethief
@@ -144,6 +150,12 @@ class RubyHorsethief:
 
     @property
     def camps(self) -> list:
+        """
+        Compiles a list of camps
+
+        Returns:
+            list: List of Ruby Horsethief Camps
+        """
         return [
             self.Rattlesnake,
             self.BeaverTail1,

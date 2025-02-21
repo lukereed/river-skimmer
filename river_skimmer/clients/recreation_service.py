@@ -1,4 +1,6 @@
-from datetime import datetime as dt
+"""
+Client to interact with Recreation.gov `/availability` endpoint
+"""
 from collections import ChainMap
 import random
 import requests
@@ -20,9 +22,17 @@ USER_AGENTS = [
 ]
 
 
-def get_river_availability(section: Section, start_date: dt, end_date: dt) -> pd.Series:
+def get_river_availability(section: Section, start_date: str, end_date: str) -> pd.Series:
     """
     Creates a request for status of a particular river section
+
+    Parameters:
+        section (Section): River section of interest
+        start_date (str): Start date in the format YYYY-mm-dd
+        end_date (str): end date in the format YYYY-mm-dd
+
+    Returns:
+        pd.Series: Series of available launch dates
     """
     session = requests.Session()
     river_availability = session.get(
@@ -50,6 +60,17 @@ def get_river_availability(section: Section, start_date: dt, end_date: dt) -> pd
 
 
 def get_camp_details(section: Section, month: int, year: int) -> dict:
+    """
+    Retrieves available camp site details
+
+    Parameters:
+        section (Section): River section of interest
+        month (int): Month of interest
+        year (int): Year of interest
+
+    Returns:
+        dict: Dictionary of camp availability
+    """
     session = requests.Session()
     camp_details = session.get(
         url=f'{RECREATION_API_BASE_URL}permits/{section.id}/availability/month',

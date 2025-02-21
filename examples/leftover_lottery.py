@@ -1,7 +1,11 @@
+"""
+Example usage to write out DataFrame of all available river permits for a 
+specified time window
+"""
 import os
 
 from river_skimmer.main import RiverPermitFinder
-from river_skimmer.utils.utils import make_dir_if_not_exist
+from river_skimmer.utils.directories import make_dir_if_not_exist
 
 
 if __name__ == "__main__":

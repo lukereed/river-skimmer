@@ -1,3 +1,6 @@
+"""
+Determines permit availability for all rivers specified in Permit.river_sections
+"""
 from datetime import datetime as dt
 import pandas as pd
 
@@ -16,6 +19,12 @@ class RiverPermitFinder:
         self.end_date = end_date
 
         self.availability: pd.Series = None
+        self.df: pd.DataFrame = None
+
+    def run(self) -> None:
+        """
+        Determines permit availability for all rivers
+        """
         self.df: pd.DataFrame = pd.DataFrame(
             index=pd.date_range(
                 start=self.start_date,
@@ -23,11 +32,6 @@ class RiverPermitFinder:
                 freq='1d',
             ),
         )
-
-    def run(self):
-        """
-        Determines permit availability and communicates output
-        """
 
         for section in Permit().river_sections:
             availability = get_river_availability(
