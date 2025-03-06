@@ -41,8 +41,8 @@ def get_river_availability(section: Section, start_date: str, end_date: str) -> 
         params={
             "start_date": f'{start_date}T00:00:00.000Z',
             "end_date": f'{end_date}T00:00:00.000Z',
-            "commercial_acc": False,
-            "is_lottery": False,
+            # "commercial_acc": False,
+            "is_lottery": True,
         }
     )
     river_availability.raise_for_status()
