@@ -42,10 +42,9 @@ class RubyCampsites:
 
 if __name__ == "__main__":
     camps = RubyCampsites(
-        month=5,
+        month=4,
         year=2025,
     )
     make_dir_if_not_exist('output')
-    make_dir_if_not_exist(f'output/{camps.year}')
     camps.df.to_csv(
-        f'output/{camps.year}/RubyCampsites-{camps.year}-{camps.month}.csv')
+        f'output/RubyCampsites-{camps.year}-{camps.month}.csv')

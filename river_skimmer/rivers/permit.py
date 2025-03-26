@@ -43,14 +43,6 @@ class Permit:
         put_in='MackLoma',
         take_out='Westwater',
     )
-    Westwater = Section(
-        id=621744,
-        entrance=None,
-        river='Colorado',
-        name='Westwater',
-        put_in='Westwater',
-        take_out='Cisco',
-    )
     SalmonMain = Section(
         id=234622,
         entrance=376,
@@ -129,7 +121,6 @@ class Permit:
             self.GreenRiverGatesOfLodore,
             # self.RubyHorsethief,  # Follows a different format on rec.gov
             # self.RogueRiver,  # Follows a different format on rec.gov
-            # self.Westwater,  # Follows a different format on rec.gov
             self.SalmonMain,
             self.SalmonMiddleFork,
             self.SanJuanMexicanHatClayHills,
