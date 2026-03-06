@@ -139,3 +139,46 @@ class Permit:
             self.SnakeRiverHellsCanyon,
             self.YampaDeerlodgePark,
         ]
+
+    @property
+    def dinosaur(self):
+        """
+        Compiles a list of Dinosaur National Monument river sections
+
+        Returns:
+            list: List of River Sections within Dinosaur National Monument
+        """
+        return [
+            self.GreenRiverGatesOfLodore,
+            self.YampaDeerlodgePark,
+        ]
+
+    @property
+    def san_juan_salmon(self):
+        """
+        Compiles a list of San Juan and Salmon River sections
+
+        Returns:
+            list: List of River Sections within the San Juan and Salmon Rivers
+        """
+        return [
+            self.SanJuanMexicanHatClayHills,
+            self.SanJuanSandIslandClayHills,
+            self.SanJuanSandIslandMexicanHat,
+            self.SalmonMain,
+            self.SalmonMiddleFork,
+            self.SnakeRiverHellsCanyon,
+            self.SelwayRiver,
+        ]
+
+    @property
+    def desolation_gray(self):
+        """
+        Compiles a list of Desolation and Gray Canyons river sections
+
+        Returns:
+            list: List of River Sections within Desolation and Gray Canyons
+        """
+        return [
+            self.GreenRiverDesolationGray,
+        ]

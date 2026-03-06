@@ -13,10 +13,16 @@ class RiverPermitFinder:
     Finds a recreation.gov permit
     """
 
-    def __init__(self, start_date: dt, end_date: dt):
+    def __init__(
+        self,
+        start_date: dt,
+        end_date: dt,
+        river_sections: str = "river_sections",
+    ) -> None:
         # TODO: If no dates are supplies, use lottery window
         self.start_date = start_date
         self.end_date = end_date
+        self.river_sections = river_sections
 
         self.availability: pd.Series = None
         self.df: pd.DataFrame = None
@@ -24,6 +30,12 @@ class RiverPermitFinder:
     def run(self) -> None:
         """
         Determines permit availability for all rivers
+
+        Args:
+            river_sections: str, name of attribute in Permit class to use for river sections
+
+        Returns:
+            None, but sets self.df to a DataFrame of availability for all river sections
         """
         self.df: pd.DataFrame = pd.DataFrame(
             index=pd.date_range(
@@ -33,7 +45,7 @@ class RiverPermitFinder:
             ),
         )
 
-        for section in Permit().river_sections:
+        for section in getattr(Permit(), self.river_sections):
             availability = get_river_availability(
                 section=section,
                 start_date=self.start_date,
